@@ -21,6 +21,6 @@ def fib(n):
 
 n=int(input('введите число '))
 list = []
-for i in range(-n, n):
+for i in range(-n, n+1):
     list.append(fib(i))
 print(list)

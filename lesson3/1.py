@@ -9,3 +9,7 @@ for i in range(len(num_list)):
     if i % 2 != 0:
         sum += num_list[i]
 print(f'сумма элементов списка, стоящих на нечётной позиции равна {sum}')
+
+
+# from random import randint
+# my_list = [randint(10, 100) for i in range(randint(5, 10))]    чтобы в одну строку сделать рандомный список

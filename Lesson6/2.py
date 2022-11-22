@@ -10,19 +10,19 @@
 # Подтвердите работоспособность(выведите в консоль результаты) для обоих вариантов: groups меньше tutors и tutors меньше groups.
 # Сделайте сначала задание через циклы обычным образом, затем оформите решение в "одну строку" в виде comprehensions
 
-tutors = ['Иван', 'Анастасия', 'Петр']
+tutors = ['Иван', 'Анастасия', 'Петр', 'Анастасия', 'Петр']
 groups = ['9А', '7В', '9Б']
 new_lst=[]
-if len(tutors)>len(groups):
-    # for i in range(len(tutors)-len(groups)):   это вроде лучше потому что лишнего не добавляет?
-    #      groups.append(None)
-    for i,el in enumerate(tutors):
-        groups.append(None)
-        new_lst.append((el, groups[i]))
-else:
-    for i,el in enumerate(tutors):
-        new_lst.append((el, groups[i]))
+# if len(tutors)>len(groups):
+#     # for i in range(len(tutors)-len(groups)):   это вроде лучше потому что лишнего не добавляет?
+#     #      groups.append(None)
+#     for i,el in enumerate(tutors):
+#         groups.append(None)
+#         new_lst.append((el, groups[i]))
+# else:
+#     for i,el in enumerate(tutors):
+#         new_lst.append((el, groups[i]))
 
 
-# new_lst=[(el, groups[i]) for i,el in enumerate(tutors) if len(tutors)<len(groups) else (i, None) for i in tutors] 
+new_lst=[(el, groups[i])  if i<len(groups) else (el, None) for i,el in enumerate(tutors)] 
 print(new_lst)

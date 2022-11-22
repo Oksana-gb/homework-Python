@@ -2,10 +2,25 @@
 # Пример:
 # - пусть N = 4, тогда [ 1, 2, 6, 24 ] (1, 1*2, 1*2*3, 1*2*3*4)
 
+
+
+
+# n=int(input('введите число '))
+# r=1
+# i=1
+# while i<n+1:
+#     r*=i
+#     print (r, end = " ")
+#     i+=1
+
+
+# или
+
+
+import math
+
 n=int(input('введите число '))
-factorial=1
 i=1
 while i<n+1:
-    factorial*=i
-    print (factorial, end = " ")
-    i+=1
+   print(math.factorial(i), end = " ")
+   i+=1

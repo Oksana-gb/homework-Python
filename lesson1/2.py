@@ -3,5 +3,5 @@
 x=1
 y=2
 z=3
-if not(x or y or z)==-x and -y and -z: print("true")
-else: print("false") 
+if not(x or y or z)==-x and -y and -z: print(True)
+else: print(False) 

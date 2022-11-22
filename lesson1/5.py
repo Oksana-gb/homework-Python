@@ -5,9 +5,14 @@
 # - A (7,-5); B (1,-1) -> 7,21
 # Если вы не знаете как вычислить квадратный корень, оставьте квадрат расстояния
 
+import math # или from math import dist  это извлечет только возведение в квадрат, и тогда ниже можно будет использовать не meth.dist, а просто  dist
+
 x1=int(input('Введите x: '))
 y1=int(input('Введите y: '))
 x2=int(input('Введите x: '))
 y2=int(input('Введите y: '))
-result=pow((pow((x2-x1),2) + pow((y2-y1),2)), 0.5)
+# result=pow((pow((x2-x1),2) + pow((y2-y1),2)), 0.5)
+a=[x1,y1]
+b=[x2,y2]
+result=math.dist(a,b)
 print('{:.2f}'.format(result))

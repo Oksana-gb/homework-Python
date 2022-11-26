@@ -1,5 +1,7 @@
 import csv
 
+import controller
+
 db_main=dict()
 global_mapping=['фамилия','имя', 'класс']
 
@@ -13,7 +15,7 @@ def create_record(db:dict, data:list, mapping:list)-> dict:
 
 # выводим в консоль по id
 def read_record(db:dict, rec_id)->dict:
-    print(db[rec_id])
+    print("\033[35m\033[3m\033[47m{}\033[0m".format(db[rec_id]))
 
 
 # Обновить запись по ID
@@ -34,10 +36,9 @@ def export(db:dict, file)->None:
         header=['id','фамилия','имя', 'класс']
         writer = csv.DictWriter(csvfile, fieldnames=header)
         writer.writeheader()
-        a=list(db.keys())
-        for el in a:
-            b=db[el]
-            writer.writerow({'id':el,'фамилия':b['фамилия'], 'имя':b['имя'], 'класс':b['класс']})
+        for key in db.keys():
+            b=db[key]
+            writer.writerow({'id':key,'фамилия':b['фамилия'], 'имя':b['имя'], 'класс':b['класс']})
 
 
 # находим последнюю id и выдаем следующую свободную
